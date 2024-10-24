@@ -1,14 +1,27 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printchar.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: marcgar2 <marcgar2@student.42madrid.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/24 23:24:35 by marcgar2          #+#    #+#             */
+/*   Updated: 2024/10/24 23:24:35 by marcgar2         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
-char ft_printchar(char c)
+
+char	ft_printchar(char c)
 {
-  write(1, &c, 2);
-  return 0;
+	write(1, &c, 1);
+	return 0;
 }
-int main(void)
+/*int main(void)
 {
-  char a = 'ab';
-  char total;
-  total = ft_printchar(a);
-  printf("%s\n", total);
-  return 0;
-}
+	char a = 'a';
+	char total;
+	total = ft_printchar(a);
+	printf("%c\n", total);
+	return 0;
+}*/
