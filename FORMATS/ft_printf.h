@@ -4,6 +4,7 @@
 #include <unistd.h>
 #include <stdio.h>
 
-char ft_printchar(char c);
+char	ft_printchar(char c);
+int		ft_totalhex(unsigned int num, const char format);
 
 #endif
