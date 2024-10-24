@@ -4,4 +4,6 @@
 #include <unistd.h>
 #include <stdio.h>
 
+char ft_printchar(char c);
+
 #endif
