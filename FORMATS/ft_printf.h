@@ -16,6 +16,7 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdint.h>
 
 char	ft_printchar(char c);
 int		ft_hexalen(unsigned int nbr);
@@ -30,5 +31,8 @@ int		ft_printprcnt(void);
 void	ft_putstr(char *str);
 int		ft_printstr(char *str);
 int		ft_printnbr(int a);
+int		ft_ptrlen(uintptr_t nbr);
+void	ft_ptrcalc(uintptr_t nbr);
+int		ft_printptr(unsigned long long nbr);
 
 #endif

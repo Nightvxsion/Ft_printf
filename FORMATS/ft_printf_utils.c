@@ -30,10 +30,10 @@ int	ft_printstr(char *str)
 	int	i;
 
 	i = 0;
-	if (str == NULL)
+	if (!str)
 	{
-		ft_putstr("null");
-		return (5);
+		write(1, "(null)", 6);
+		return (6);
 	}
 	while(str[i])
 	{
@@ -48,10 +48,11 @@ int	ft_printnbr(int a)
 	char	*str;
 	int		leng;
 
-	str = NULL;
+	str = 0;
 	leng = 0;
 	leng = ft_printstr(str);
 	str = ft_itoa(a);
 	free(str);
 	return (leng);
 }
+

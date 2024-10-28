@@ -67,7 +67,7 @@ int	ft_printunsign(unsigned int n)
 	return (leng);
 }
 
-int	main(void)
+/*int	main(void)
 {
 	unsigned int	n;
 	int				a;
@@ -76,4 +76,4 @@ int	main(void)
 	a = ft_printunsign(n);
 	printf("Resultado de unsigned -> %u\n", n);
 	return (0);
-}
+}*/

@@ -55,11 +55,12 @@ int	ft_totalhex(unsigned int num, const char format)
 {
 	if (num == 0)
 		return (write(1, "0", 1)); // If NaN
-	ft_calchex(num, format); // Passes as parameter the number and the type of data (format)
+	else
+		ft_calchex(num, format); // Passes as parameter the number and the type of data (format)
 	return (ft_hexalen(num)); // Total length of the hexadecimal num
 }
 
-int main(void)
+/*int main(void)
 {
 	unsigned int	num1;
 	int					total;
@@ -68,6 +69,7 @@ int main(void)
 	total = ft_totalhex(num1, 'X');
 	printf("\nHexadecimal length: %u\n", total);
 
-	/*printf("\nTotal length -> %d\n", total);*/
+	printf("\nTotal length -> %d\n", total);
 	return (0);
 }
+*/
