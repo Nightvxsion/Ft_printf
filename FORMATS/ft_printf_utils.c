@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcgar2 <marcgar2@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: marcgar2 <marcgar2@student.42madrid.org    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 22:00:55 by marcgar2          #+#    #+#             */
-/*   Updated: 2024/10/28 22:00:55 by marcgar2         ###   ########.fr       */
+/*   Updated: 2024/10/29 07:59:46 by marcgar2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,12 @@ int	ft_printnbr(int a)
 
 	str = 0;
 	leng = 0;
-	leng = ft_printstr(str);
+	if (a == 0)
+		return(write(1, "0", 1));
 	str = ft_itoa(a);
+	if (!str)
+		return (0);
+	leng = ft_printstr(str);
 	free(str);
 	return (leng);
 }

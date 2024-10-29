@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcgar2 <marcgar2@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: marcgar2 <marcgar2@student.42madrid.org    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 22:21:03 by marcgar2          #+#    #+#             */
-/*   Updated: 2024/10/28 22:21:03 by marcgar2         ###   ########.fr       */
+/*   Updated: 2024/10/29 08:05:11 by marcgar2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,8 +61,11 @@ int	ft_printf(const char *str, ...)
 
 int	main(void)
 {
-	char	*prueba = "ACABO DE HACER EL PUTISIMO PRINTF";
-	int		i = 0;
-	ft_printf("Number -> %d %s", prueba, i);
+	char			*prueba = "ME CAGO EN DIOS";
+	char			s = 'a';
+	int				i = 123916239;
+	unsigned int	a = 0;
+	ft_printf("Numero -> %p", prueba);
+	printf("\n");
 	return (0);
 }
