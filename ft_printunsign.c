@@ -19,11 +19,11 @@ int	ft_unsign_len(unsigned int n)
 
 	leng = 0;
 	if (n == 0)
-		return (1); // If the number is 0 then print the only char that it has
-	while(n != 0)
+		return (1);
+	while (n != 0)
 	{
 		leng++;
-		n /= 10; // Divide by 10 to get the number on the left side
+		n /= 10;
 	}
 	return (leng);
 }
@@ -34,15 +34,14 @@ char	*ft_unsignitoa(unsigned int n)
 	int		leng;
 
 	if (n == 0)
-		return((char *)write(1, "0", 1)); // Only shows a "0 \0" on the terminal
+		return ((char *)write(1, "0", 1));
 	leng = ft_unsign_len(n);
 	str = (char *)malloc(sizeof(char) * (leng + 1));
 	while (n != 0)
 	{
-		str[leng - 1] = (n % 10) + '0'; // Locates in the previous position,
-		//then gets the number of the right side, the turns into ASCII
-		n /= 10; // Removes the previous char
-		leng--; // Goes inverse
+		str[leng - 1] = (n % 10) + '0';
+		n /= 10;
+		leng--;
 	}
 	return (str);
 }
@@ -57,11 +56,11 @@ int	ft_printunsign(unsigned int n)
 		return (0);
 	leng = 0;
 	if (n == 0)
-		return(write(1, "0", 1));
+		return (write(1, "0", 1));
 	else
 	{
-		str = ft_unsignitoa(n); // this variable contains the ASCII value for that int
-		leng = ft_printstr(str); // this variable contains the length of leng, printed as a atring
+		str = ft_unsignitoa(n);
+		leng = ft_printstr(str);
 		free(str);
 	}
 	return (leng);

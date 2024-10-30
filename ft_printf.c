@@ -44,7 +44,7 @@ int	ft_printf(const char *str, ...)
 	i = 0;
 	leng = 0;
 	va_start(elem, str);
-	while(str[i])
+	while (str[i])
 	{
 		if (str[i] == '%')
 		{
@@ -56,10 +56,10 @@ int	ft_printf(const char *str, ...)
 		i++;
 	}
 	va_end(elem);
-	return(leng);
+	return (leng);
 }
 
-int	main(void)
+/*int	main(void)
 {
 	char			*prueba = "ME CAGO EN DIOS";
 	char			s = 'a';
@@ -68,4 +68,4 @@ int	main(void)
 	ft_printf("Numero -> %i", i);
 	printf("\n");
 	return (0);
-}
+}*/

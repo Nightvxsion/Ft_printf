@@ -15,7 +15,7 @@
 char	ft_printchar(char c)
 {
 	write(1, &c, 1);
-	return 0;
+	return (0);
 }
 /*int main(void)
 {

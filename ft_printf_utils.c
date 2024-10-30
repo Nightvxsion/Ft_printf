@@ -18,7 +18,7 @@ void	ft_putstr(char *str)
 	int	i;
 
 	i = 0;
-	while(str[i])
+	while (str[i])
 	{
 		write(1, &str[i], 1);
 		i++;
@@ -35,12 +35,12 @@ int	ft_printstr(char *str)
 		write(1, "(null)", 6);
 		return (6);
 	}
-	while(str[i])
+	while (str[i])
 	{
 		write(1, &str[i], 1);
 		i++;
 	}
-	return(i);
+	return (i);
 }
 
 int	ft_printnbr(int a)
@@ -51,7 +51,7 @@ int	ft_printnbr(int a)
 	str = 0;
 	leng = 0;
 	if (a == 0)
-		return(write(1, "0", 1));
+		return (write(1, "0", 1));
 	str = ft_itoa(a);
 	if (!str)
 		return (0);
@@ -59,4 +59,3 @@ int	ft_printnbr(int a)
 	free(str);
 	return (leng);
 }
-

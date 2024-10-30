@@ -40,13 +40,13 @@ void	ft_calchex(unsigned int num, const char format)
 	else
 	{
 		if (num <= 9)
-			ft_putchar_fd(num + '0', 1); // If there's only one digit, passes as ascii value
+			ft_putchar_fd(num + '0', 1);
 		else
 		{
 			if (format == 'x')
-				ft_putchar_fd((num - 10 + 'a'), 1); // If it's 'x' then it return a lower-char value
+				ft_putchar_fd((num - 10 + 'a'), 1);
 			else if (format == 'X')
-				ft_putchar_fd((num - 10 + 'A'), 1); // Sume but it's capital (-10 for the ascii value in hex)
+				ft_putchar_fd((num - 10 + 'A'), 1);
 		}
 	}
 }
@@ -54,10 +54,10 @@ void	ft_calchex(unsigned int num, const char format)
 int	ft_totalhex(unsigned int num, const char format)
 {
 	if (num == 0)
-		return (write(1, "0", 1)); // If NaN
+		return (write(1, "0", 1));
 	else
-		ft_calchex(num, format); // Passes as parameter the number and the type of data (format)
-	return (ft_hexalen(num)); // Total length of the hexadecimal num
+		ft_calchex(num, format);
+	return (ft_hexalen(num));
 }
 
 /*int main(void)

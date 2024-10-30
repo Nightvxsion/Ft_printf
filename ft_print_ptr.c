@@ -36,10 +36,9 @@ void	ft_ptrcalc(uintptr_t nbr)
 	else
 	{
 		if (nbr <= 9)
-			ft_putchar_fd((nbr + '0'), 1); // If it's less than 9, then we grab the number and add 47
-			// (value of 0 in ASCII) and add with the number of the parameter
+			ft_putchar_fd((nbr + '0'), 1);
 		else
-			ft_putchar_fd((nbr - 10 + 'a'), 1); // The same as before but with the letters of the hex code
+			ft_putchar_fd((nbr - 10 + 'a'), 1);
 	}
 }
 
