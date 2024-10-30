@@ -65,7 +65,7 @@ int	main(void)
 	char			s = 'a';
 	int				i = 123916239;
 	unsigned int	a = 0;
-	ft_printf("Numero -> %p", prueba);
+	ft_printf("Numero -> %i", i);
 	printf("\n");
 	return (0);
 }
