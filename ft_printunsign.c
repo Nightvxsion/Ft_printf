@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printunsign.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcgar2 <marcgar2@student.42madrid.org    +#+  +:+       +#+        */
+/*   By: marcgar2 <marcgar2@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 22:26:37 by marcgar2          #+#    #+#             */
-/*   Updated: 2024/10/29 08:03:11 by marcgar2         ###   ########.fr       */
+/*   Updated: 2024/10/31 20:08:42 by marcgar2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include "libft.h"
 
 int	ft_unsign_len(unsigned int n)
 {

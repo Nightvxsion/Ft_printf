@@ -6,7 +6,7 @@
 /*   By: marcgar2 <marcgar2@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 22:20:55 by marcgar2          #+#    #+#             */
-/*   Updated: 2024/10/25 22:20:55 by marcgar2         ###   ########.fr       */
+/*   Updated: 2024/10/31 20:17:01 by marcgar2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,14 @@
 
 char	ft_printchar(char c);
 int		ft_hexalen(unsigned int nbr);
-int		ft_totalhex(unsigned int num, const char format);
-void	ft_calchex(unsigned int num, const char format);
-int		ft_totalhex(unsigned int num, const char format);
+void	ft_calchex(unsigned int num, char const format);
+int		ft_totalhex(unsigned int num, char const format);
 int		ft_unsign_len(unsigned int n);
 char	*ft_unsignitoa(unsigned int n);
 int		ft_printunsign(unsigned int n);
 int		ft_printprcnt(void);
+int		ft_formats(va_list elem, const char format);
+int		ft_printf(char const *str, ...);
 
 void	ft_putstr(char *str);
 int		ft_printstr(char *str);
@@ -34,5 +35,7 @@ int		ft_printnbr(int a);
 int		ft_ptrlen(uintptr_t nbr);
 void	ft_ptrcalc(uintptr_t nbr);
 int		ft_printptr(unsigned long long nbr);
+int		ft_atoi(const char *nptr);
+char	*ft_itoa(int n);
 
 #endif

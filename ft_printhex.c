@@ -6,7 +6,7 @@
 /*   By: marcgar2 <marcgar2@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 23:36:47 by marcgar2          #+#    #+#             */
-/*   Updated: 2024/10/24 23:36:47 by marcgar2         ###   ########.fr       */
+/*   Updated: 2024/10/31 19:46:34 by marcgar2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	ft_hexalen(unsigned int nbr)
 	return (i);
 }
 
-void	ft_calchex(unsigned int num, const char format)
+void	ft_calchex(unsigned int num, char const format)
 {
 	if (num >= 16)
 	{
@@ -51,7 +51,7 @@ void	ft_calchex(unsigned int num, const char format)
 	}
 }
 
-int	ft_totalhex(unsigned int num, const char format)
+int	ft_totalhex(unsigned int num, char const format)
 {
 	if (num == 0)
 		return (write(1, "0", 1));

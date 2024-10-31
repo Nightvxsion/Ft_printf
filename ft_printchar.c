@@ -6,7 +6,7 @@
 /*   By: marcgar2 <marcgar2@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 23:24:35 by marcgar2          #+#    #+#             */
-/*   Updated: 2024/10/24 23:24:35 by marcgar2         ###   ########.fr       */
+/*   Updated: 2024/10/31 19:30:27 by marcgar2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 char	ft_printchar(char c)
 {
 	write(1, &c, 1);
-	return (0);
+	return (1);
 }
 /*int main(void)
 {
