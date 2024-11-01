@@ -15,7 +15,7 @@ LIB = ar -rcs
 RM = rm -f
 CC = cc
 CCFLAGS = -Wall -Werror -Wextra
-INCLUDE = ft_printf.h
+INCLUDE = 
 SRC = ft_print_ptr.c\
 	ft_printchar.c\
 	ft_printf_utils.c\
