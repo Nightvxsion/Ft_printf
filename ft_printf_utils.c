@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcgar2 <marcgar2@student.42madrid.org    +#+  +:+       +#+        */
+/*   By: marcgar2 <marcgar2@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 22:00:55 by marcgar2          #+#    #+#             */
-/*   Updated: 2024/10/29 07:59:46 by marcgar2         ###   ########.fr       */
+/*   Updated: 2024/10/31 20:17:34 by marcgar2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include "libft.h"
 
 void	ft_putstr(char *str)
 {
@@ -35,6 +34,8 @@ int	ft_printstr(char *str)
 		write(1, "(null)", 6);
 		return (6);
 	}
+	if (str[i] == '\0')
+		return (0);
 	while (str[i])
 	{
 		write(1, &str[i], 1);
@@ -58,4 +59,9 @@ int	ft_printnbr(int a)
 	leng = ft_printstr(str);
 	free(str);
 	return (leng);
+}
+
+void	ft_putchar_fd(char c, int fd)
+{
+	write (fd, &c, 1);
 }

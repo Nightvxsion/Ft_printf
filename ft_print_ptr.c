@@ -6,18 +6,19 @@
 /*   By: marcgar2 <marcgar2@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 23:04:19 by marcgar2          #+#    #+#             */
-/*   Updated: 2024/10/28 23:04:19 by marcgar2         ###   ########.fr       */
+/*   Updated: 2024/10/31 20:08:45 by marcgar2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include "libft.h"
 
 int	ft_ptrlen(uintptr_t nbr)
 {
 	int	i;
 
 	i = 0;
+	if (nbr == 0)
+		return (write(1, "(nil)", 5));
 	while (nbr != 0)
 	{
 		i++;
@@ -47,13 +48,10 @@ int	ft_printptr(unsigned long long nbr)
 	int	ptr_output;
 
 	ptr_output = 0;
+	if (!nbr)
+		return ((write(1, "(nil)", 5)));
 	ptr_output += write(1, "0x", 2);
-	if (nbr == 0)
-		write(1, "0", 1);
-	else
-	{
-		ft_ptrcalc(nbr);
-		ptr_output += ft_ptrlen(nbr);
-	}
+	ft_ptrcalc(nbr);
+	ptr_output += ft_ptrlen(nbr);
 	return (ptr_output);
 }

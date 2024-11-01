@@ -6,11 +6,11 @@
 /*   By: marcgar2 <marcgar2@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 20:04:30 by marcgar2          #+#    #+#             */
-/*   Updated: 2024/09/27 23:28:19 by marcgar2         ###   ########.fr       */
+/*   Updated: 2024/10/31 20:16:23 by marcgar2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
 int	ft_atoi(const char *nptr)
 {
