@@ -15,10 +15,7 @@ LIB = ar rcs
 RM = rm -f
 CC = cc
 CCFLAGS = -Wall -Werror -Wextra
-<<<<<<< HEAD
-INCLUDE = 
-=======
->>>>>>> 01187c53855965d1fb69378a1261cb357859697e
+INCLUDE = ft_printf.h
 SRC = ft_print_ptr.c\
 	ft_printchar.c\
 	ft_printf_utils.c\
@@ -27,22 +24,26 @@ SRC = ft_print_ptr.c\
 	ft_printprcnt.c\
 	ft_printunsign.c\
 	ft_itoa.c\
-	ft_atoi.c\
+	ft_atoi.c
 OBJ = $(SRC:.c=.o)
+LIBFT_DIR = ../Ft_printf/Ft_printf/Libft
+LIBFT = $(LIBFT_DIR)/libft.a
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
-		$(LIB) $(NAME) $(OBJ)
+$(LIBFT):
+		$(MAKE) -C $(LIBFT_DIR)
 
-%.o: %.c
-		$(CC) $(CCFLAGS) -c $< -o $@
+$(NAME): $(OBJ) $(INCLUDE) $(LIBFT)
+		$(LIB) $(NAME) $(OBJ) $(LIBFT)
 
 clean:
 	$(RM) $(OBJ)
+	$(MAKE) -C $(LIBFT_DIR) clean
 
 fclean: clean
 	$(RM) $(NAME)
+	$(MAKE) -C $(LIBFT_DIR) fclean
 
 re: fclean all
 

@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include "libft.h"
 
 int	ft_formats(va_list elem, const char format)
 {
@@ -31,6 +32,8 @@ int	ft_formats(va_list elem, const char format)
 		format_espec += ft_totalhex(va_arg(elem, unsigned int), format);
 	else if (format == '%')
 		format_espec += ft_printprcnt();
+	else
+		return (-1);
 	return (format_espec);
 }
 
@@ -38,23 +41,25 @@ int	ft_printf(char const *str, ...)
 {
 	int		i;
 	int		leng;
+	int		res;
 	va_list	elem;
 
 	i = 0;
 	leng = 0;
+	res = 0;
 	va_start(elem, str);
 	while (str[i])
 	{
 		if (str[i] == '%')
 		{
-			leng += ft_formats(elem, str[i + 1]);
+			res = ft_formats(elem, str[i + 1]);
+			if (res == -1)
+				return (-1);
+			leng += res;
 			i++;
 		}
 		else
-		{
-			ft_printchar(str[i]);
-			leng++;
-		}
+			leng += ft_printchar(str[i]);
 		i++;
 	}
 	va_end(elem);
