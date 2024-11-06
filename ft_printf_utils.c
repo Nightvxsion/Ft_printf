@@ -6,7 +6,7 @@
 /*   By: marcgar2 <marcgar2@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 22:00:55 by marcgar2          #+#    #+#             */
-/*   Updated: 2024/10/31 20:17:34 by marcgar2         ###   ########.fr       */
+/*   Updated: 2024/11/06 19:09:40 by marcgar2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,6 @@ int	ft_printnbr(int a)
 	if (!str)
 		return (0);
 	leng = ft_printstr(str);
-	free(str);
 	return (leng);
 }
 

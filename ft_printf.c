@@ -6,12 +6,13 @@
 /*   By: marcgar2 <marcgar2@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 22:21:03 by marcgar2          #+#    #+#             */
-/*   Updated: 2024/10/31 20:17:26 by marcgar2         ###   ########.fr       */
+/*   Updated: 2024/11/06 21:27:17 by marcgar2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include "libft.h"
+#include <limits.h>
 
 int	ft_formats(va_list elem, const char format)
 {
@@ -66,86 +67,97 @@ int	ft_printf(char const *str, ...)
 	return (leng);
 }
 
-/*int	main(void)
+int	main(void)
 {
-	char	character = 'A';
-	char	*string = "HELLO WORLD";
-	void	*void_ptr = NULL;
-	int	number = 420;
-	unsigned int	unsigned_number = 420;
-	int	number_i = 420;
-	int	hex_number_lowercase = 420;
-	int	hex_number_uppercase = 420;
-	int	n;
-	//%Character%
-	n = printf("CHAR printf()            = %c", character);
-	printf(" (%d)\n", n);
-	n = ft_printf("CHAR ft_printf()         = %c", character);
-	printf(" (%d)\n\n", n);
+
+
+ft_printf(" %u ", 0);
+ ft_printf(" %u ", LONG_MIN);
+ ft_printf(" %u %u %u %u %u %u", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, 0, -42);
+
+//For /home/marcgar2/francinette/tests/printf/printfTester/tests/mix_test.cpp:
+//25:     TEST(1, print("%%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %c%%", 'A', "42", 42, 42 ,42 , 42, 42, 'B', "-42", -42, -42 ,-42 ,-42, 42, 'C',
+//"0", 0, 0 ,0 ,0, 42, 0));
+
+	//char	character = 'A';
+	//char	*string = "HELLO WORLD";
+	//void	*void_ptr = NULL;
+	//int	number = 420;
+	//unsigned int	unsigned_number = 420;
+	//int	number_i = 420;
+	//int	hex_number_lowercase = 420;
+	//int	hex_number_uppercase = 420;
+	//int	n;
+	////%Character%
+	//n = printf("CHAR printf()            = %c", character);
+	//printf(" (%d)\n", n);
+	//n = ft_printf("CHAR ft_printf()         = %c", character);
+	//printf(" (%d)\n\n", n);
 	
-	//%String%
-	n = printf("STRING printf()          = %s", string);
-	printf(" (%d)\n", n);
-	n = ft_printf("STRING ft_printf()       = %s", string);
-	printf(" (%d)\n\n", n);
+	////%String%
+	//n = printf("STRING printf()          = %s", string);
+	//printf(" (%d)\n", n);
+	//n = ft_printf("STRING ft_printf()       = %s", string);
+	//printf(" (%d)\n\n", n);
 	
-	//%Pointer%
-	n = printf("PTR ADDRESS printf()     = %p", &void_ptr);
-	printf(" (%d)\n", n);
-	n = ft_printf("PTR ADDRESS ft_printf()  = %p", &void_ptr);
-	printf(" (%d)\n\n", n);
+	////%Pointer%
+	//n = printf("PTR ADDRESS printf()     = %p", &void_ptr);
+	//printf(" (%d)\n", n);
+	//n = ft_printf("PTR ADDRESS ft_printf()  = %p", &void_ptr);
+	//printf(" (%d)\n\n", n);
 	
-	//%Pointer (nil)%
-	n = printf("PTR (NIL) printf()       = %p", void_ptr);
-	printf(" (%d)\n", n);
-	n = ft_printf("PTR (NIL) ft_printf()    = %p", void_ptr);
-	printf(" (%d)\n\n", n);
+	////%Pointer (nil)%
+	//n = printf("PTR (NIL) printf()       = %p", void_ptr);
+	//printf(" (%d)\n", n);
+	//n = ft_printf("PTR (NIL) ft_printf()    = %p", void_ptr);
+	//printf(" (%d)\n\n", n);
 	
-	//%Signed Decimal%
-	n = printf("SIGNED DEC printf()      = %d", number);
-	printf(" (%d)\n", n);
-	n = ft_printf("SIGNED DEC ft_printf()   = %d", number);
-	printf(" (%d)\n\n", n);
+	////%Signed Decimal%
+	//n = printf("SIGNED DEC printf()      = %d", number);
+	//printf(" (%d)\n", n);
+	//n = ft_printf("SIGNED DEC ft_printf()   = %d", number);
+	//printf(" (%d)\n\n", n);
 	
-	//%Unsigned Integer%
-	n = printf("UNSIGNED INT printf()    = %i", number_i);
-	printf(" (%d)\n", n);
-	n = ft_printf("UNSIGNED INT ft_printf() = %i", number_i);
-	printf(" (%d)\n\n", n);
+	////%Unsigned Integer%
+	//n = printf("UNSIGNED INT printf()    = %i", number_i);
+	//printf(" (%d)\n", n);
+	//n = ft_printf("UNSIGNED INT ft_printf() = %i", number_i);
+	//printf(" (%d)\n\n", n);
 	
-	//%unsigned decimal%
-	n = printf("UNSIGNED DEC printf()    = %u", unsigned_number);
-	printf(" (%d)\n", n);
-	n = ft_printf("UNSIGNED DEC ft_printf() = %u", unsigned_number);
-	printf(" (%d)\n\n", n);
+	////%unsigned decimal%
+	//n = printf("UNSIGNED DEC printf()    = %u", unsigned_number);
+	//printf(" (%d)\n", n);
+	//n = ft_printf("UNSIGNED DEC ft_printf() = %u", unsigned_number);
+	//printf(" (%d)\n\n", n);
 	
-	//%Hexadecimal Lowercase%
-	n = printf("HEX LOW printf()         = %x", hex_number_lowercase);
-	printf(" (%d)\n", n);
-	n = ft_printf("HEX LOW ft_printf()      = %x", hex_number_lowercase);
-	printf(" (%d)\n\n", n);
+	////%Hexadecimal Lowercase%
+	//n = printf("HEX LOW printf()         = %x", hex_number_lowercase);
+	//printf(" (%d)\n", n);
+	//n = ft_printf("HEX LOW ft_printf()      = %x", hex_number_lowercase);
+	//printf(" (%d)\n\n", n);
 	
-	//%Hexadecimal Uppercase%
-	n = printf("HEX UP printf()          = %X", hex_number_uppercase);
-	printf(" (%d)\n", n);
-	n = ft_printf("HEX UP ft_printf()       = %X", hex_number_uppercase);
-	printf(" (%d)\n\n", n);
+	////%Hexadecimal Uppercase%
+	//n = printf("HEX UP printf()          = %X", hex_number_uppercase);
+	//printf(" (%d)\n", n);
+	//n = ft_printf("HEX UP ft_printf()       = %X", hex_number_uppercase);
+	//printf(" (%d)\n\n", n);
 	
-	//%Percentage%
-	n = printf("PERCENTAGE printf()      = %% ");
-	printf(" (%d)\n", n);
-	n = ft_printf("PERCENTAGE ft_printf()   = %% ");
-	printf(" (%d)\n\n", n);
+	////%Percentage%
+	//n = printf("PERCENTAGE printf()      = %% ");
+	//printf(" (%d)\n", n);
+	//n = ft_printf("PERCENTAGE ft_printf()   = %% ");
+	//printf(" (%d)\n\n", n);
 	
-	//%ERROR HANDLING%
-	n = printf("NO MODIFIER printf()     = %");
-	printf(" (%d)\n", n);
-	n = ft_printf("NO MODIFIER ft_printf()  = %");
-	printf(" (%d)\n\n", n);
+	////%ERROR HANDLING%
+	//n = printf("NO MODIFIER printf()     = %");
+	//printf(" (%d)\n", n);
+	//n = ft_printf("NO MODIFIER ft_printf()  = %");
+	//printf(" (%d)\n\n", n);
 	
-	//%REMIX-1%
-	n = printf("printf()                 = %s %", string);
-	printf(" (%d)\n", n);
-	n = ft_printf("ft_printf()              = %s %", string);
-	printf(" (%d)\n\n", n);
-}*/
+	////%REMIX-1%
+	//n = printf("printf()                 = %s %", string);
+	//printf(" (%d)\n", n);
+	//n = ft_printf("ft_printf()              = %s %", string);
+	//printf(" (%d)\n\n", n);
+
+}

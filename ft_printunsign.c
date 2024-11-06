@@ -6,7 +6,7 @@
 /*   By: marcgar2 <marcgar2@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 22:26:37 by marcgar2          #+#    #+#             */
-/*   Updated: 2024/10/31 20:08:42 by marcgar2         ###   ########.fr       */
+/*   Updated: 2024/11/06 21:24:36 by marcgar2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,6 @@ char	*ft_unsignitoa(unsigned int n)
 	char	*str;
 	int		leng;
 
-	if (n == 0)
-		return ((char *)write(1, "0", 1));
 	leng = ft_unsign_len(n);
 	str = (char *)malloc(sizeof(char) * (leng + 1));
 	while (n != 0)
@@ -44,6 +42,7 @@ char	*ft_unsignitoa(unsigned int n)
 		leng--;
 	}
 	return (str);
+	free(str);
 }
 
 int	ft_printunsign(unsigned int n)

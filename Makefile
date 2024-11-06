@@ -6,7 +6,7 @@
 #    By: marcgar2 <marcgar2@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/30 20:52:52 by marcgar2          #+#    #+#              #
-#    Updated: 2024/10/31 20:11:07 by marcgar2         ###   ########.fr        #
+#    Updated: 2024/11/06 18:46:52 by marcgar2         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ SRC = ft_print_ptr.c\
 	ft_itoa.c\
 	ft_atoi.c
 OBJ = $(SRC:.c=.o)
-LIBFT_DIR = ../Ft_printf/Ft_printf/Libft
+LIBFT_DIR = ./Libft
 LIBFT = $(LIBFT_DIR)/libft.a
 
 all: $(NAME)
@@ -34,7 +34,7 @@ all: $(NAME)
 $(LIBFT):
 		$(MAKE) -C $(LIBFT_DIR)
 
-$(NAME): $(OBJ) $(INCLUDE) $(LIBFT)
+$(NAME): $(LIBFT) $(OBJ) $(INCLUDE) 
 		$(LIB) $(NAME) $(OBJ) $(LIBFT)
 
 clean:
