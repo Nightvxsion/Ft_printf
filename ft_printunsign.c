@@ -3,66 +3,34 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printunsign.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcgar2 <marcgar2@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: marcgar2 <marcgar2@student.42madrid.org    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 22:26:37 by marcgar2          #+#    #+#             */
-/*   Updated: 2024/11/06 21:24:36 by marcgar2         ###   ########.fr       */
+/*   Updated: 2024/11/07 09:14:26 by marcgar2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include "libft.h"
 
-int	ft_unsign_len(unsigned int n)
+int	ft_unsignitoa(unsigned int n)
 {
-	int	leng;
-
-	leng = 0;
-	if (n == 0)
-		return (1);
-	while (n != 0)
-	{
-		leng++;
-		n /= 10;
-	}
-	return (leng);
-}
-
-char	*ft_unsignitoa(unsigned int n)
-{
-	char	*str;
+	char	str[12];
 	int		leng;
+	int		i;
 
-	leng = ft_unsign_len(n);
-	str = (char *)malloc(sizeof(char) * (leng + 1));
-	while (n != 0)
-	{
-		str[leng - 1] = (n % 10) + '0';
-		n /= 10;
-		leng--;
-	}
-	return (str);
-	free(str);
-}
-
-int	ft_printunsign(unsigned int n)
-{
-	char	*str;
-	int		leng;
-
-	str = ft_unsignitoa(n);
-	if (!str)
-		return (0);
+	i = 0;
 	leng = 0;
 	if (n == 0)
 		return (write(1, "0", 1));
-	else
+	while (n > 0)
 	{
-		str = ft_unsignitoa(n);
-		leng = ft_printstr(str);
-		free(str);
+		str[leng - 1] = (n % 10) + '0';
+		n /= 10;
 	}
-	return (leng);
+	while (leng--)
+		leng += write(1, &num[i], 1);
+	return (str);
 }
 
 /*int	main(void)
