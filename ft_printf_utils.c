@@ -58,6 +58,7 @@ int	ft_printnbr(int a)
 	if (!str)
 		return (0);
 	leng = ft_printstr(str);
+	free(str);
 	return (leng);
 }
 

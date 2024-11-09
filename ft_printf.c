@@ -67,17 +67,10 @@ int	ft_printf(char const *str, ...)
 	return (leng);
 }
 
-int	main(void)
+/*int	main(void)
 {
-
-
-ft_printf(" %u ", 0);
- ft_printf(" %u ", LONG_MIN);
- ft_printf(" %u %u %u %u %u %u", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, 0, -42);
-
-//For /home/marcgar2/francinette/tests/printf/printfTester/tests/mix_test.cpp:
-//25:     TEST(1, print("%%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %c%%", 'A', "42", 42, 42 ,42 , 42, 42, 'B', "-42", -42, -42 ,-42 ,-42, 42, 'C',
-//"0", 0, 0 ,0 ,0, 42, 0));
+	ft_printf(" %u ", 0);
+	ft_printf(" %u ", LONG_MIN);
 
 	//char	character = 'A';
 	//char	*string = "HELLO WORLD";
@@ -160,4 +153,4 @@ ft_printf(" %u ", 0);
 	//n = ft_printf("ft_printf()              = %s %", string);
 	//printf(" (%d)\n\n", n);
 
-}
+}*/

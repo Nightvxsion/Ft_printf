@@ -13,24 +13,24 @@
 #include "ft_printf.h"
 #include "libft.h"
 
-int	ft_unsignitoa(unsigned int n)
+int	ft_printunsign(unsigned int n)
 {
 	char	str[12];
 	int		leng;
 	int		i;
 
-	i = 0;
 	leng = 0;
 	if (n == 0)
 		return (write(1, "0", 1));
 	while (n > 0)
 	{
-		str[leng - 1] = (n % 10) + '0';
+		str[leng++] = (n % 10) + '0';
 		n /= 10;
 	}
-	while (leng--)
-		leng += write(1, &num[i], 1);
-	return (str);
+	i = leng;
+	while (leng > 0)
+		write(1, &str[--leng], 1);
+	return (i);
 }
 
 /*int	main(void)
