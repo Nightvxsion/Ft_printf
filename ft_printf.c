@@ -12,7 +12,6 @@
 
 #include "ft_printf.h"
 #include "libft.h"
-#include <limits.h>
 
 int	ft_formats(va_list elem, const char format)
 {

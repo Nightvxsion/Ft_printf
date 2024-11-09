@@ -17,6 +17,7 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <stdint.h>
+# include <limits.h>
 # include "libft.h"
 
 char	ft_printchar(char c);
